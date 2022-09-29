@@ -33,6 +33,11 @@ UserSchema.pre('save', async function (next) {
     next();
 });
 
+// compares and validates password for logging in
+UserSchema.pre('save', async function (password) {
+    return bcrypt.compare(password, this.password);
+});
+
 const User = model('User', UserSchema);
 
 module.exports = User;
