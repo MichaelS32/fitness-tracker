@@ -17,4 +17,13 @@ const GoalSchema = new Schema(
             get: (timestamp) => dateFormat(timestamp),
         },
     },
-)
+    {
+        toJSON: {
+            getters: true,
+        },
+    }
+);
+
+const Goal = model('Goal', GoalSchema);
+
+module.exports = Goal;
