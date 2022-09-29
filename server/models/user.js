@@ -32,3 +32,7 @@ UserSchema.pre('save', async function (next) {
     }
     next();
 });
+
+const User = model('User', UserSchema);
+
+module.exports = User;
