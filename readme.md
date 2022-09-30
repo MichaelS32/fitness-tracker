@@ -14,7 +14,7 @@
 
 ## CONCEPT
 
-- We get fit and we get lit yurrrr. (obvious placeholder)
+- An app that allows a user to input data on their workout such as type and length. It will also have elements of a social networking site in that it allows a user to view other users public updates.
 
 
 ## Technologies Used
