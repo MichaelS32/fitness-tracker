@@ -24,3 +24,31 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_EXERCISE = gql`
+  mutation addExercise($exerciseType: String!, $title: String!, $weight: Int, $sets: Int, $reps: Int, $distance: Int, $time: Int) {
+    addExercise(exercistType: $exerciseType, title: $title, weight: $weight, sets: $sets, reps: $reps, distance: $distance, time: $time) {
+        _id
+        exerciseType
+        title
+        weight
+        sets
+        reps
+        distance
+        time
+        createdAt
+    }
+  }
+`;
+
+export const REMOVE_EXERCISE = gql`
+  mutation removeExercise($id: ID!) {
+    removeExercise(id: $id) {
+        _id
+        username
+        exercises {
+            _id
+            title
+        }
+    }
+  }
+`;

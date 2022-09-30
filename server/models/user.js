@@ -23,6 +23,12 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    exercises: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Exercise'
+        }
+    ]
 });
 
 UserSchema.pre('save', async function (next) {
