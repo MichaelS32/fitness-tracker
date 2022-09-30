@@ -1,4 +1,9 @@
 # group-5-project-3 (SoFit)
+## Table of Contents
+- [Group-Members](#group-members)
+- [Concept](#concept)
+- [Technologies](#technologies-used)
+- [Links](#links)
 
 ## GROUP MEMBERS
 
