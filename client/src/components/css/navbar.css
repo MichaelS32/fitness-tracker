@@ -1,0 +1,40 @@
+.navbarContainer{
+    height: 150px;
+    width: 100%;
+    background-image: url("../../../../assets/navbar.jpg");
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.navbarLeft{
+    flex: 1;
+}
+
+.logo{
+    font-size: 60px;
+    margin-left: 5px;
+    margin-right: 350px;
+    font-style: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+}
+
+.navbarRight{
+    flex: 1;
+}
+
+.navbar, .nav-item, .nav-link {
+    float: right;
+    display: block;
+    font-size: 25px;
+    padding: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    font-style: sans-serif;
+    font-style: italic;
+}
