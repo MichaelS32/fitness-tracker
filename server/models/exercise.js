@@ -6,48 +6,48 @@ const ExerciseSchema = new Schema(
         day: { type: Date, default: () => new Date() },
         exercise: [
             {
-            type: {
-                type: String,
-                required: true,
+                exerciseType: {
+                    type: String,
+                    required: true,
+                },
+                title: {
+                    type: String,
+                    required: true,
+                },
+                // resistance section
+                weight: {
+                    type: Number,
+
+                },
+                sets: {
+                    type: Number,
+
+                },
+                reps: {
+                    type: Number,
+
+                },
+                // cardio section
+                distance: {
+                    type: Number,
+
+                },
+                time: {
+                    type: Number,
+
+                },
+                createdAt: {
+                    type: Date,
+                    default: Date.now,
+                    get: (createdAtVal) => dateFormat(createdAtVal),
+                },
             },
-            title: {
-                type: String,
-                required: true,
-            },
-            // resistance section
-            weight: {
-                type: Number,
-                required: true,
-            },
-            sets: {
-                type: Number,
-                required: true,
-            },
-            reps: {
-                type: Number,
-                required: true,
-            },
-            // cardio section
-            distance: {
-                type: Number,
-                required: true,
-            },
-            time: {
-                type: Number,
-                required: true,
-            },
-            createdAt: {
-                type: Date,
-                default: Date.now,
-                get: (createdAtVal) => dateFormat(createdAtVal),
-            },
-        },
-    ],
-},
-    {
-    toJSON: {
-        getters: true,
+        ],
     },
+    {
+        toJSON: {
+            getters: true,
+        },
     }
 );
 

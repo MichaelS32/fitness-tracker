@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
-// add auth middleware here
+const { authMiddleware } = require('./utils/auth');
 
 const db = require('./config/connection');
 
@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    // add the auth then remove this comment
     context: authMiddleware
 });
 

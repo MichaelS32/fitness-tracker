@@ -34,12 +34,30 @@ const resolvers = {
             return { token, user };
         },
         // Go over this section with the group
-        // addWorkout: async (parent, { workoutType, workoutMeasurement, context }) => {
-        //     if (context.user) {
-        //         const updatedUser = await User.findOneAndUpdate(
-
-        //         )
-        //     }
-        // }
+        addExercise: async (parent, { exercise }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedExercises: exercise } },
+                    { new: true }
+                )
+                return updatedUser;
+            }
+            throw new AuthenticationError('You must be logged in to save an exercise!')
+        },
+        removeExercise: async (parent, { exerciseId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { exerciseId: Exercise._id } },
+                    { new: true }
+                )
+                return updatedUser;
+            }
+            throw new AuthenticationError('You must be logged in to save an exercise!')
+        }
     }
+
 }
+
+module.exports = resolvers;
