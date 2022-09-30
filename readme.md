@@ -3,6 +3,7 @@
 - [Group-Members](#group-members)
 - [Concept](#concept)
 - [Technologies](#technologies-used)
+- [Install/Usage](#installationusage)
 - [Links](#links)
 
 ## GROUP MEMBERS
@@ -25,6 +26,15 @@
 - React
 - Emotion
 
+## Installation/Usage
+
+```
+npm install
+```
+
+```
+npm run develop
+```
 
 ## Links
 
