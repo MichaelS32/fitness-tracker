@@ -1,4 +1,4 @@
-# group-5-project-3 (SoFit)
+# Group-5-Project-3 (SoFIT)
 ## Table of Contents
 - [Group-Members](#group-members)
 - [Concept](#concept)
