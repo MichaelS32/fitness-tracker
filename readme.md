@@ -25,10 +25,10 @@ Place Holder Image Below Until Front End is Ready
 - [Node.js](https://nodejs.org/en/docs/)
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/docs/)
-- [Mongoose-ODM]()
-- [React]()
-- [CSS]()
-- [Bootstrap]()
+- [Mongoose-ODM](https://mongoosejs.com/)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [CSS](https://devdocs.io/css/)
+- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 
 ## Installation/Usage
 
