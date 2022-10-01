@@ -27,6 +27,8 @@
 - MongoDB
 - Mongoose ODM
 - React
+- CSS
+- Bootstrap
 
 ## Installation/Usage
 
