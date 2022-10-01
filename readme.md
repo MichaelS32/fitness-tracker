@@ -21,14 +21,14 @@ Place Holder Image Below Until Front End is Ready
 ![image](assets/Workout1.jpeg)
 
 ## Technologies Used
-- GraphQL
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose ODM
-- React
-- CSS
-- Bootstrap
+- [GraphQL]()
+- [Node.js]()
+- [Express.js]()
+- [MongoDB]()
+- [Mongoose-ODM]()
+- [React]()
+- [CSS]()
+- [Bootstrap]()
 
 ## Installation/Usage
 
