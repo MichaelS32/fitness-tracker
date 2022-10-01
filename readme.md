@@ -16,6 +16,9 @@
 
 - An app that allows a user to input data on their workout such as type and length. It will also have elements of a social networking site in that it allows a user to view other users public updates.
 
+## SCREENSHOT
+
+
 
 ## Technologies Used
 - GraphQL
