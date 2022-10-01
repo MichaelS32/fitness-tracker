@@ -21,10 +21,10 @@ Place Holder Image Below Until Front End is Ready
 ![image](assets/Workout1.jpeg)
 
 ## Technologies Used
-- [GraphQL]()
-- [Node.js]()
-- [Express.js]()
-- [MongoDB]()
+- [GraphQL](https://graphql.org/learn/)
+- [Node.js](https://nodejs.org/en/docs/)
+- [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/docs/)
 - [Mongoose-ODM]()
 - [React]()
 - [CSS]()
