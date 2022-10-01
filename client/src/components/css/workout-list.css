@@ -1,0 +1,24 @@
+.workoutlist{
+    flex: 1;
+}
+
+.workoutlist-box{
+    top: 20px;
+    width: 40%;
+    height: 480px;
+    position: relative;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    border: solid 2px;
+    color: black;
+}
+
+.workoutlist-box h2{
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-style: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
