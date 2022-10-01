@@ -24,7 +24,6 @@
 - MongoDB
 - Mongoose ODM
 - React
-- Emotion
 
 ## Installation/Usage
 
