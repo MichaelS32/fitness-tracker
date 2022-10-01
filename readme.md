@@ -14,7 +14,12 @@
 
 ## CONCEPT
 
-- An app that allows a user to input data on their workout such as type and length. It will also have elements of a social networking site in that it allows a user to view other users public updates.
+- User Story<br />
+As a user I want to be able to become healthier (ex: lose weight, gain muscle, change diet, etc.) and have the capability to interact with others. 
+
+- Motivation<br />
+We wanted to have an app that would be fun and interactive for users. We all know that working out is not everyone’s favorite activity so we wanted to make it more interactive than just a simple record your workout app. With SoFIT we wanted to let the user see other users and their journey with a social network style feed.
+
 
 ## SCREENSHOT
 Place Holder Image Below Until Front End is Ready
