@@ -1,11 +1,12 @@
 import React from "react";
 import "../css/workout-list.css"
+import WorkoutCard from "./workoutlist/WorkoutCard";
 
 function WorkoutList() {
     return (
         <div className="workoutlist-box">
             <div className="workoutlist">
-            <h2>Workouts</h2>
+            <WorkoutCard />
         </div>
             </div>
     )
