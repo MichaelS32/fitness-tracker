@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import User from "../pages/Profile";
 import Login from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 
@@ -11,6 +12,8 @@ function Header() {
     switch (currentPage) {
       case "Home":
         return <Home />;
+      case "User":
+        return <User />;
 
       default:
         return <Home />;

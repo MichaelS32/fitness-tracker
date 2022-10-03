@@ -1,4 +1,7 @@
-import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import React from "react";
 
-import { useQuery, useMutation } from '@apollo/client';
+function User() {
+  return <div>Profile page</div>;
+}
+
+export default User;

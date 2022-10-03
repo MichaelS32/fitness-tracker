@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const GoalSchema = new Schema(
     {
-        name: {
+        username: {
             type: String,
             required: true,
         },
