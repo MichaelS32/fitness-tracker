@@ -1,7 +1,7 @@
-.navbarContainer{
+.navbarContainer {
     height: 150px;
     width: 100%;
-    background-image: url("../../../../assets/navbar.jpg");
+    /* background-image: url("../../../../assets/navbar.jpg"); */
     background-position: center;
     display: flex;
     align-items: center;
@@ -9,11 +9,11 @@
     top: 0;
 }
 
-.navbarLeft{
+.navbarLeft {
     flex: 1;
 }
 
-.logo{
+.logo {
     font-size: 60px;
     margin: 220px;
     font-style: sans-serif;
@@ -22,11 +22,13 @@
     color: white;
 }
 
-.navbarRight{
+.navbarRight {
     flex: 1;
 }
 
-.navbar, .nav-item, .nav-link {
+.navbar,
+.nav-item,
+.nav-link {
     float: right;
     display: block;
     font-size: 25px;

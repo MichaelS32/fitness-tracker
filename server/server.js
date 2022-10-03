@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
-const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer, graphqlExpress } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
+const {
+    ApolloServerPluginLandingPageLocalDefault
+} = require('apollo-server-core');
 
 const db = require('./config/connection');
 
@@ -12,7 +15,11 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware
+    context: authMiddleware,
+    cache: 'bounded',
+    plugins: [
+        ApolloServerPluginLandingPageLocalDefault({ embed: true }),
+    ],
 });
 
 // Express Server
