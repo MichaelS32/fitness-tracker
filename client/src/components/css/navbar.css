@@ -1,7 +1,7 @@
 .navbarContainer {
     height: 150px;
     width: 100%;
-    /* background-image: url("../../../../assets/navbar.jpg"); */
+    background-image: url("../../../../assets/navbar.jpg"); 
     background-position: center;
     display: flex;
     align-items: center;
@@ -20,20 +20,19 @@
     font-style: italic;
     font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
 .navbarRight {
     flex: 1;
 }
 
-.navbar,
-.nav-item,
-.nav-link {
+.navbar{
     float: right;
     display: block;
     font-size: 25px;
     padding: 10px;
-    margin-right: 20px;
+    margin: 50px;
     text-decoration: none;
     color: white;
     font-style: sans-serif;

@@ -1,14 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./css/navbar.css";
 
-
-
-
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Header = () => {
-  const logout = event => {
+  const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
@@ -45,4 +42,3 @@ const Header = () => {
 };
 
 export default Header;
-
