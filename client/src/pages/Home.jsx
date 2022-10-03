@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client"
-import "./css/home.css";
-import Feed from "./home-containers/Feed";
-import WorkoutList from "./home-containers/Workout-list";
-import Hero from "./home-containers/hero";
+import "../components/css/home.css";
+import Feed from "../components/home-containers/Feed";
+import WorkoutList from "../components/home-containers/Workout-list";
+import Hero from "../components/home-containers/hero";
 
 function Home() {
   return (

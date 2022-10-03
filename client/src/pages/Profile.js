@@ -1,4 +1,22 @@
-import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import React from "react";
+import { useQuery } from "@apollo/client"
 
-import { useQuery, useMutation } from '@apollo/client';
+import Feed from "../components/home-containers/Feed";
+import WorkoutList from "../components/home-containers/Workout-list";
+import Hero from "../components/home-containers/hero";
+
+function Profile() {
+    return (
+        <>
+            <div>
+                <Hero />
+            </div>
+            <div className="homeContainer">
+                <Feed />
+                <WorkoutList />
+            </div>
+        </>
+    )
+}
+
+export default Profile;

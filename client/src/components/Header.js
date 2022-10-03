@@ -1,30 +1,48 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import Login from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "./css/navbar.css";
 
-function Header() {
-  const [currentPage, handlePageChange] = useState("Home");
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "Home":
-        return <Home />;
 
-      default:
-        return <Home />;
-    }
+
+import Auth from '../utils/auth';
+
+const Header = () => {
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
   };
 
   return (
-    <div>
-      <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-      <main>
-        <div>{renderPage(currentPage)}</div>
-      </main>
-    </div>
+    <header>
+      <div className="navbarContainer">
+        <div className="navbarLeft">
+          <Link to="/">
+            <h1 className="logo">SoFIT</h1>
+          </Link>
+        </div>
+
+        <div className="navbarRight">
+          <nav className="navbar">
+            {Auth.loggedIn() ? (
+              <>
+                <Link to="/profile">My Exercises</Link>
+                <a href="/" onClick={logout}>
+                  Logout
+                </a>
+              </>
+            ) : (
+              <>
+                <Link to="/login">Login</Link>
+                <Link to="/signup">Signup</Link>
+              </>
+            )}
+          </nav>
+        </div>
+      </div>
+    </header>
   );
-}
+};
 
 export default Header;
+
