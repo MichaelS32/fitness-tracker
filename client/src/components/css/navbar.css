@@ -1,7 +1,7 @@
 .navbarContainer {
     height: 150px;
     width: 100%;
-    /* background-image: url("../../../../assets/navbar.jpg"); */
+    background-image: url("../../../../assets/navbar.jpg"); 
     background-position: center;
     display: flex;
     align-items: center;
@@ -11,29 +11,33 @@
 
 .navbarLeft {
     flex: 1;
+    box-sizing: content-box;
+    height: 150px;
 }
 
 .logo {
     font-size: 60px;
-    margin: 220px;
+    padding: auto;
+    margin-left: 2vw;
     font-style: sans-serif;
     font-style: italic;
     font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
 .navbarRight {
     flex: 1;
+    flex-wrap: nowrap;
 }
 
-.navbar,
 .nav-item,
-.nav-link {
+.navbar{
     float: right;
     display: block;
     font-size: 25px;
     padding: 10px;
-    margin-right: 20px;
+    margin: 50px;
     text-decoration: none;
     color: white;
     font-style: sans-serif;

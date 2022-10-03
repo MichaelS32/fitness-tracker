@@ -1,14 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./css/navbar.css";
 
-
-
-
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Header = () => {
-  const logout = event => {
+  const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
@@ -26,15 +23,15 @@ const Header = () => {
           <nav className="navbar">
             {Auth.loggedIn() ? (
               <>
-                <Link to="/profile">My Exercises</Link>
-                <a href="/" onClick={logout}>
+                <Link to="/profile" className='nav-item'>My Exercises</Link>
+                <a href="/" onClick={logout} className='nav-item'>
                   Logout
                 </a>
               </>
             ) : (
               <>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Signup</Link>
+                <Link to="/login" className='nav-item'>Login</Link>
+                <Link to="/signup" className='nav-item'>Signup</Link>
               </>
             )}
           </nav>
@@ -45,4 +42,3 @@ const Header = () => {
 };
 
 export default Header;
-
