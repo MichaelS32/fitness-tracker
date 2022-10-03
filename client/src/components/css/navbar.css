@@ -1,7 +1,7 @@
 .navbarContainer {
     height: 150px;
     width: 100%;
-    /* background-image: url("../../../../assets/navbar.jpg"); */
+    background-image: url("../../../../assets/navbar.jpg");
     background-position: center;
     display: flex;
     align-items: center;
@@ -11,11 +11,13 @@
 
 .navbarLeft {
     flex: 1;
+    box-sizing: content-box;
+    height: 150px;
 }
 
 .logo {
     font-size: 60px;
-    margin: 220px;
+    padding: auto;
     font-style: sans-serif;
     font-style: italic;
     font-weight: bold;
