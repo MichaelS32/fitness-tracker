@@ -21,12 +21,12 @@ const resolvers = {
 
             return { token, user };
         },
-        login: async (parent, {User: { email, password }}) => {
+        login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
             if (!user) {
                 throw new AuthenticationError('You have entered incorrect credentials.')
             }
-            const correctPw = await user.usCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
             if (!correctPw) {
                 throw new AuthenticationError('You have entered incorrect credentials.')
             }
