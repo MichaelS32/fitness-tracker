@@ -23,7 +23,6 @@ We wanted to have an app that would be fun and interactive for users. We all kno
 
 
 ## SCREENSHOT
-Place Holder Image Below Until Front End is Ready
 ![image](assets/Project%20Screenshot.jpg)
 ![image](assets/Project%20Screenshot%202.jpg)
 ![image](assets/Project%20Screenshot%203.jpg)
