@@ -15,7 +15,7 @@ import Home from './pages/Home';
 import Login from './pages/LoginForm';
 import Profile from './pages/Profile';
 import SignUpForm from './pages/SignUpForm';
-const url = 'http://localhost:5000/graphql'
+const url = 'http://localhost:5000/graphql';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
