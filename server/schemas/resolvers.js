@@ -11,6 +11,13 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError("You are not logged in");
+        },
+        exercises: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Exercise.find(params).sort({ createdAt: -1 });
+        },
+        exercise: async (parent, { _id }) => {
+            return Exercise.findOne({ _id });
         }
     },
 
@@ -34,14 +41,16 @@ const resolvers = {
             return { token, user };
         },
         // Go over this section with the group
-        addExercise: async (parent, { exercise }, context) => {
+        addExercise: async (parent, args, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
+                const exercise = await Exercise.create({ ...args, username: context.user.username });
+
+                await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedExercises: exercise } },
+                    { $addToSet: { exercises: exercise } },
                     { new: true }
                 )
-                return updatedUser;
+                return exercise;
             }
             throw new AuthenticationError('You must be logged in to save an exercise!')
         },

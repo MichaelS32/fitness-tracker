@@ -15,3 +15,37 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_EXERCISES = gql`
+  query exercises($username: String) {
+    exercises(username: $username) {
+      _id
+      exerciseType
+      title
+      weight
+      sets
+      reps
+      distance
+      time
+      username
+      createdAt
+    }
+  }
+`;
+
+export const QUERY_EXERCISE = gql`
+  query exercise($id: ID!) {
+    exercise(_id: $id) {
+      _id
+      exerciseType
+      title
+      weight
+      sets
+      reps
+      distance
+      time
+      username
+      createdAt
+    }
+  }
+`
