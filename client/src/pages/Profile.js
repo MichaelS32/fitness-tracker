@@ -1,22 +1,13 @@
 import React from "react";
-import { useQuery } from "@apollo/client"
-
-import Feed from "../components/home-containers/Feed";
-import WorkoutList from "../components/home-containers/Workout-list";
-import Hero from "../components/home-containers/hero";
+import { useQuery } from "@apollo/client";
+import Tabs from "../components/profile-containers/tabs";
 
 function Profile() {
-    return (
-        <>
-            <div>
-                <Hero />
-            </div>
-            <div className="homeContainer">
-                <Feed />
-                <WorkoutList />
-            </div>
-        </>
-    )
+  return (
+    <div>
+      <Tabs />
+    </div>
+  );
 }
 
 export default Profile;
