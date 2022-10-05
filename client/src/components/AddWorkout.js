@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { QueryManager } from "@apollo/client/core/QueryManager";
+import Auth from "../utils/auth";
 
 const theme = createTheme();
 
@@ -56,8 +57,9 @@ const AddWorkout = () => {
 
         try {
             await addExercise({
-                variables: { ...exerciseText },
+                variables: { ...exerciseText }
             });
+            console.log(...exerciseText);
 
             setText('');
         } catch (e) {

@@ -22,6 +22,7 @@ const typeDefs = gql`
     }
     type Query {
         me: User
+        user(username: String!): User
         exercises(username: String): [Exercise]
         exercise(_id: ID!): Exercise
     }
@@ -32,7 +33,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addExercise(exerciseType: String!, title: String!, weight: String, sets: String, reps: String, distance: String, time: String): User
+        addExercise(exerciseType: String!, title: String!, weight: String, sets: String, reps: String, distance: String, time: String): Exercise
         removeExercise(Exercise: ID): User
     }
     

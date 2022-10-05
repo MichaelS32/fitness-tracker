@@ -16,6 +16,22 @@ export const QUERY_ME = gql`
   }
 `;
 
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      exercises {
+        _id
+        exerciseType
+        title
+        createdAt
+      }
+    }
+  }
+`;
+
 export const QUERY_EXERCISES = gql`
   query exercises($username: String) {
     exercises(username: $username) {

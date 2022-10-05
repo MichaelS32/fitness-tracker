@@ -8,10 +8,16 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user_id })
                     .select('-__v -password')
+                    .populate('exercises')
                 return userData;
             }
             throw new AuthenticationError("You are not logged in");
         },
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+              .select('-__v -password')
+              .populate('exercises');
+          },
         exercises: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Exercise.find(params).sort({ createdAt: -1 });
@@ -41,9 +47,9 @@ const resolvers = {
             return { token, user };
         },
         // Go over this section with the group
-        addExercise: async (parent, args, context) => {
-            if (context.user) {
-                const exercise = await Exercise.create({ ...args, username: context.user.username });
+        addExercise: async (parent, {exerciseType, title, weight, sets, reps, distance, time}, context) => {
+            if (context.User) {
+                const exercise = await Exercise.create({ exerciseType, title, weight, sets, reps, distance, time,  username: context.User.username });
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
