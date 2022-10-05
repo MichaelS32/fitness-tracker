@@ -24,7 +24,7 @@ We wanted to have an app that would be fun and interactive for users. We all kno
 
 ## SCREENSHOT
 Place Holder Image Below Until Front End is Ready
-![image](assets/Workout1.jpeg)
+![image](assets/Project%20Screenshot%202.jpg)
 
 ## Technologies Used
 - [GraphQL](https://graphql.org/learn/)
