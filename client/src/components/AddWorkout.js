@@ -62,7 +62,7 @@ const AddWorkout = () => {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-
+        exerciseText.username = Auth.getProfile().data.username;
         setText({
             ...exerciseText,
             [name]: value,
@@ -83,6 +83,8 @@ const AddWorkout = () => {
             console.error(e);
         }
     };
+
+
 
     return (
         <ThemeProvider theme={theme}>
