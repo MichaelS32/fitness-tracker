@@ -19,7 +19,6 @@ async function startServer() {
     const apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
-        cache: bounded,
         context: authMiddleware
     });
 
@@ -28,7 +27,7 @@ async function startServer() {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
-    apolloServer.applyMiddleware(app)
+    apolloServer.applyMiddleware({ app })
 
     app.use((req, res) => {
         res.send('Hello From express apollo server')
