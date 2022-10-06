@@ -21,7 +21,7 @@ const typeDefs = gql`
         createdAt: String
     }
     type Query {
-        me: User
+        me(username: String!): User
         user(username: String!): User
         exercises(username: String): [Exercise]
         exercise(_id: ID!): Exercise

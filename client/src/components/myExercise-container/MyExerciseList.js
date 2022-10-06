@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "../css/myexercise.css";
 
 const MyExerciseList = ({ Exercise, title }) => {
+  // try {
+
+  // } catch (error) {
+  //   console.warn()
+  // }
   if (!Exercise.length) {
     return <h3>No Exercises have been posted yet...</h3>;
   }
