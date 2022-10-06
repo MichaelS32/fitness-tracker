@@ -24,6 +24,13 @@ async function startServer() {
 
     await apolloServer.start();
 
+    // If in production, serve client build as static asset
+    app.use(express.static(path.join(__dirname, '../client/build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    })
+
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
@@ -33,14 +40,7 @@ async function startServer() {
         res.send('Hello From express apollo server')
     })
 
-    // If in production, serve client build as static asset
-    if (process.env.NODE_ENV === 'production') {
-        app.use(express.static(path.join(__dirname, '../client/build')));
-    }
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    })
 
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sofit_db', {
         useNewUrlParser: true,
