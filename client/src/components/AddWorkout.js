@@ -35,10 +35,10 @@ const AddWorkout = () => {
             try {
                 const myUsername = Auth.getProfile().data.username
                 console.log(myUsername)
-                const { me } = cache.readQuery({
-                    query: QUERY_ME,
-                    variables: { username: myUsername }
-                });
+                // const { me } = cache.readQuery({
+                //     query: QUERY_ME,
+                //     variables: { username: myUsername }
+                // });
                 cache.writeQuery({
                     query: QUERY_ME,
                     variables: { username: myUsername },

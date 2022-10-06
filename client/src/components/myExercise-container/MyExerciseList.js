@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MyExerciseList = ({ Exercise, title }) => {
+  // try {
+
+  // } catch (error) {
+  //   console.warn()
+  // }
   if (!Exercise.length) {
     return <h3>No Exercises have been posted yet...</h3>;
   }
