@@ -70,7 +70,7 @@ const AddWorkout = () => {
             });
 
 
-            // setText('');
+            setText('');
         } catch (e) {
             console.error(e);
         }

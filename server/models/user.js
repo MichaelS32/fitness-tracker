@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const exerciseSchema = require('./exercise')
 const bcrypt = require('bcrypt');
 
 const UserSchema = new Schema({
@@ -23,12 +24,7 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    exercises: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Exercise'
-        }
-    ]
+    exercises: [exerciseSchema]
 });
 
 UserSchema.pre('save', async function (next) {

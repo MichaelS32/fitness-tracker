@@ -5,9 +5,6 @@ const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 const mongoose = require('mongoose');
 
-const {
-    ApolloServerPluginLandingPageLocalDefault
-} = require('apollo-server-core');
 
 const db = require('./config/connection');
 
