@@ -28,11 +28,11 @@ const AddWorkout = () => {
                 console.log(myUsername)
                 const { me } = cache.readQuery({
                     query: QUERY_ME,
-                    variables: { username: myUsername }
+                    variables: { myUsername }
                 });
                 cache.writeQuery({
                     query: QUERY_ME,
-                    variables: { username: myUsername },
+                    variables: { myUsername },
                     data: { me: { ...me, exercises: [...me.exercises, addExercise] } },
                 });
 
@@ -64,7 +64,7 @@ const AddWorkout = () => {
         const myUsername = Auth.getProfile().data.username;
         try {
             await addExercise({
-                variables: { ...exerciseText, username: { myUsername } }
+                variables: { ...exerciseText, myUsername }
             });
             console.log(...exerciseText);
 
