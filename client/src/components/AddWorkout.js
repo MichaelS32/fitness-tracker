@@ -57,7 +57,7 @@ const AddWorkout = () => {
 
         try {
             await addExercise({
-                variables: { ...exerciseText }
+                variables: { ...exerciseText, }
             });
             console.log(...exerciseText);
 

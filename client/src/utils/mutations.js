@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_EXERCISE = gql`
-  mutation addExercise($exerciseType: String!, $title: String!, $weight: String, $sets: String, $reps: String, $distance: String, $time: String) {
-    addExercise(exerciseType: $exerciseType, title: $title, weight: $weight, sets: $sets, reps: $reps, distance: $distance, time: $time) {
+  mutation addExercise($exerciseType: String!, $title: String!, $weight: String, $sets: String, $reps: String, $distance: String, $time: String, $username: String) {
+    addExercise(exerciseType: $exerciseType, title: $title, weight: $weight, sets: $sets, reps: $reps, distance: $distance, time: $time, username: $username) {
       _id
       exerciseType
       title

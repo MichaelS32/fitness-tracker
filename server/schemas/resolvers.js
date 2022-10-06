@@ -15,9 +15,9 @@ const resolvers = {
         },
         user: async (parent, { username }) => {
             return User.findOne({ username })
-              .select('-__v -password')
-              .populate('exercises');
-          },
+                .select('-__v -password')
+                .populate('exercises');
+        },
         exercises: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Exercise.find(params).sort({ createdAt: -1 });
@@ -47,9 +47,9 @@ const resolvers = {
             return { token, user };
         },
         // Go over this section with the group
-        addExercise: async (parent, {exerciseType, title, weight, sets, reps, distance, time}, context) => {
-            if (context.User) {
-                const exercise = await Exercise.create({ exerciseType, title, weight, sets, reps, distance, time,  username: context.User.username });
+        addExercise: async (parent, { exerciseType, title, weight, sets, reps, distance, time }, context) => {
+            if (context.user) {
+                const exercise = await Exercise.create({ exerciseType, title, weight, sets, reps, distance, time, username: context.user.username });
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
@@ -58,7 +58,7 @@ const resolvers = {
                 )
                 return exercise;
             }
-            throw new AuthenticationError('You must be logged in to save an exercise!')
+
         },
         removeExercise: async (parent, { exerciseId }, context) => {
             if (context.user) {
