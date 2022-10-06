@@ -6,9 +6,9 @@ function WorkoutList() {
     return (
         <div className="workoutlist-box">
             <div className="workoutlist">
-            <WorkoutCard />
-        </div>
+                <WorkoutCard />
             </div>
+        </div>
     )
 }
 

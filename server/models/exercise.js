@@ -16,25 +16,29 @@ const ExerciseSchema = new Schema(
                 },
                 // resistance section
                 weight: {
-                    type: Number,
+                    type: String,
 
                 },
                 sets: {
-                    type: Number,
+                    type: String,
 
                 },
                 reps: {
-                    type: Number,
+                    type: String,
 
                 },
                 // cardio section
                 distance: {
-                    type: Number,
+                    type: String,
 
                 },
                 time: {
-                    type: Number,
+                    type: String,
 
+                },
+                username: {
+                    type: String,
+                    required: true
                 },
                 createdAt: {
                     type: Date,
@@ -51,6 +55,6 @@ const ExerciseSchema = new Schema(
     }
 );
 
-const Exercise = model("Exercise", ExerciseSchema);
+const Exercise = model("exercise", ExerciseSchema);
 
 module.exports = Exercise;

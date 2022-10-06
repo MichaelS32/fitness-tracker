@@ -24,11 +24,18 @@ async function startServer() {
 
     await apolloServer.start();
 
-    apolloServer.applyMiddleware({ app: app })
+    // If in production, serve client build as static asset
+    app.use(express.static(path.join(__dirname, '../client/build')));
 
-    app.use((req, res) => {
-        res.send('Hello From express apollo server')
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build/index.html'));
     })
+
+    app.use(express.urlencoded({ extended: false }));
+    app.use(express.json());
+
+    apolloServer.applyMiddleware({ app })
+
 
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sofit_db', {
         useNewUrlParser: true,

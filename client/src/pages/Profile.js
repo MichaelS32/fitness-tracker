@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "@apollo/client";
-import { color } from "@mui/system";
-import TabsBar from "../components/profile-containers/tabs-bar";
-import Sidebar from "../components/profile-containers/sidebar";
+
+import Feed from "../components/home-containers/Feed";
+import WorkoutList from "../components/home-containers/Workout-list";
+import Hero from "../components/home-containers/hero";
+import AddWorkout from "../components/AddWorkout";
 
 function Profile() {
-  const [sidebar, setSidebar] = useState(false);
-
-  const togglesidebar = () => {
-    setSidebar((prevState) => !prevState);
-  };
-
   return (
-    <div>
-      <TabsBar openSidebar={togglesidebar} />
-      <Sidebar sidebar={sidebar} />
-    </div>
+    <>
+      <div>
+        <Hero />
+      </div>
+      <div className="homeContainer">
+        <AddWorkout></AddWorkout>
+      </div>
+    </>
   );
 }
 

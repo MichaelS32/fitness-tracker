@@ -14,25 +14,27 @@ export default function WorkoutCard() {
         <ListSubheader sx={{ textAlign: 'center', fontSize: 30, fontStyle: "san-serif", fontStyle: "italic", color: "black", fontWeight: "bold", textDecoration: "underline" }} component="div">Workouts</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img className='img'
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.title}`}
-              >
-              </IconButton>
-            }
-          />
-        </ImageListItem>
+        <a href={item.url}>
+          <ImageListItem key={item.img}>
+            <img className='img'
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle={item.author}
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                  aria-label={`info about ${item.title}`}
+                >
+                </IconButton>
+              }
+            />
+          </ImageListItem>
+        </a>
       ))}
     </ImageList>
   );
@@ -45,25 +47,29 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+    url: 'https://barbend.com/best-chest-exercises/'
   },
   {
     img: 'https://cdn.mos.cms.futurecdn.net/zkrwxQVtsn3Yi2Pgmh89eN-1200-80.jpg',
     title: 'Bicep',
-    url: "https://www.livritefitness.com/workouts/bicep-workouts#barbell_curls"
+    url: 'https://barbend.com/best-biceps-exercises/'
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBSd3WTIhSGkXpI1xupkGdnLBIQjPCrLcNw&usqp=CAU',
     title: 'Tricep',
+    url: 'https://barbend.com/best-triceps-exercises/'
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszD-qY2sNipGaup_CulToghHS5YXcO_Tkfg&usqp=CAU',
     title: 'Back',
     cols: 2,
+    url: 'https://barbend.com/best-back-exercises/'
   },
   {
     img: 'https://seannal.com/wp-content/uploads/2015/03/best-shoulder-exercises-for-mass.jpg',
     title: 'Shoulder',
     cols: 2,
+    url: 'https://barbend.com/best-shoulder-exercises/'
   },
   {
     img: 'https://www.muscleandfitness.com/wp-content/uploads/2015/01/heavy-squatting-bigger-arms.jpg?quality=86&strip=all',
@@ -71,5 +77,6 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+    url: 'https://barbend.com/best-leg-exercises/'
   },
 ];
