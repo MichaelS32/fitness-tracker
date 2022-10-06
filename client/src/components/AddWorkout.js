@@ -39,6 +39,7 @@ const AddWorkout = () => {
                 const { exercises } = cache.readyQuery({ query: QUERY_EXERCISES });
                 cache.writeQuery({
                     query: QUERY_EXERCISES,
+                    variables: { username: myUsername },
                     data: { exercises: [addExercise, ...exercises] }
                 });
 
@@ -67,7 +68,7 @@ const AddWorkout = () => {
             await addExercise({
                 variables: { ...exerciseText, username: myUsername }
             });
-            console.log(...exerciseText);
+
 
             // setText('');
         } catch (e) {
