@@ -48,10 +48,11 @@ const resolvers = {
 
             await User.findOneAndUpdate(
                 { username: username },
-                { $addToSet: { exercises: { exercise } } },
+                { $addToSet: { exercises: exercise } },
                 { new: true }
             )
-            return { exercise };
+            return exercise;
+
 
 
         },
