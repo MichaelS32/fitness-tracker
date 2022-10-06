@@ -36,11 +36,10 @@ const AddWorkout = () => {
                     data: { exercises: [addExercise] },
                 });
                 // update exercise array cache
-                const { exercises } = cache.readyQuery({ query: QUERY_EXERCISES });
                 cache.writeQuery({
                     query: QUERY_EXERCISES,
                     variables: { username: myUsername },
-                    data: { exercises: [addExercise, ...exercises] }
+                    data: { exercises: [addExercise, ...exerciseText] }
                 });
 
             } catch (error) {
