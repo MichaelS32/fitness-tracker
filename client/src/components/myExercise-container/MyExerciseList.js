@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../css/myexercise.css";
 
 const MyExerciseList = ({ Exercise, title }) => {
   if (!Exercise.length) {

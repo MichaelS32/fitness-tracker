@@ -16,6 +16,8 @@ import Login from "./pages/LoginForm";
 import Profile from "./pages/Profile";
 import SignUpForm from "./pages/SignUpForm";
 import MyExercises from "./pages/MyExercises";
+import SavedExercises from "./pages/SavedExercises";
+import TabsBar from "./components/profile-containers/tabs-bar";
 const url = "http://localhost:5000/graphql";
 
 const httpLink = createHttpLink({
@@ -53,6 +55,8 @@ function App() {
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
+              <Route path="/myexercises" element={<MyExercises />} />
+              <Route path="/savedexercises" element={<SavedExercises />} />
             </Routes>
           </div>
           {/* <Footer /> */}

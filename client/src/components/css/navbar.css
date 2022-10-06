@@ -35,6 +35,7 @@
 .navbar{
     float: right;
     display: block;
+    flex-shrink: inherit;
     font-size: 25px;
     padding: 10px;
     margin: 50px;
