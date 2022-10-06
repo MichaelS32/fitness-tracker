@@ -43,8 +43,8 @@ const resolvers = {
             return { token, user };
         },
         // Go over this section with the group
-        addExercise: async (parent, { exerciseType, title, weight, sets, reps, distance, time, username }) => {
-            const exercise = await Exercise.create({ exerciseType, title, weight, sets, reps, distance, time, username });
+        addExercise: async (parent, args) => {
+            const exercise = await Exercise.create({ ...args });
 
             await User.findOneAndUpdate(
                 { username: username },
