@@ -33,7 +33,7 @@ const AddWorkout = () => {
                 cache.writeQuery({
                     query: QUERY_ME,
                     variables: { username: myUsername },
-                    data: { me: { ...me, exercises: [...me.exercises, addExercise] } },
+                    data: { exercises: [addExercise] },
                 });
                 // update exercise array cache
                 const { exercises } = cache.readyQuery({ query: QUERY_EXERCISES });
