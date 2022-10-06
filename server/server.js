@@ -36,11 +36,6 @@ async function startServer() {
 
     apolloServer.applyMiddleware({ app })
 
-    app.use((req, res) => {
-        res.send('Hello From express apollo server')
-    })
-
-
 
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sofit_db', {
         useNewUrlParser: true,
