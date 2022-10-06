@@ -35,7 +35,7 @@ We wanted to have an app that would be fun and interactive for users. We all kno
 - [Mongoose-ODM](https://mongoosejs.com/)
 - [React](https://reactjs.org/docs/getting-started.html)
 - [CSS](https://devdocs.io/css/)
-- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+- [MUI](https://mui.com/)
 
 ## Installation/Usage
 
