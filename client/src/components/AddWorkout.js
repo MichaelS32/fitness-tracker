@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_EXERCISE } from "../utils/mutations";
 import { QUERY_ME, QUERY_EXERCISES, QUERY_EXERCISE } from "../utils/queries"
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -14,7 +13,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { QueryManager } from "@apollo/client/core/QueryManager";
 import Auth from "../utils/auth";
 
 const theme = createTheme();
@@ -71,7 +69,6 @@ const AddWorkout = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const myUsername = Auth.getProfile().data.username;
         try {
             await addExercise({
                 variables: { ...exerciseText }
