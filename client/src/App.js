@@ -17,7 +17,6 @@ import Profile from "./pages/Profile";
 import SignUpForm from "./pages/SignUpForm";
 import MyExercises from "./pages/MyExercises";
 import SavedExercises from "./pages/SavedExercises";
-import TabsBar from "./components/profile-containers/tabs-bar";
 const url = "http://localhost:5000/graphql";
 
 const httpLink = createHttpLink({
