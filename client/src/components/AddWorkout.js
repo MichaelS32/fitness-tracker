@@ -24,9 +24,14 @@ const AddWorkout = () => {
     const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
         update(cache, { data: { addExercise } }) {
             try {
-                const { me } = cache.readQuery({ query: QUERY_ME });
+                const myUsername = Auth.getProfile().data.username
+                const { me } = cache.readQuery({
+                    query: QUERY_ME,
+                    variables: { myUsername }
+                });
                 cache.writeQuery({
                     query: QUERY_ME,
+                    variables: { myUsername },
                     data: { me: { ...me, exercises: [...me.exercises, addExercise] } },
                 });
             } catch (e) {
