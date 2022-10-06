@@ -25,6 +25,7 @@ const AddWorkout = () => {
         update(cache, { data: { addExercise } }) {
             try {
                 const myUsername = Auth.getProfile().data.username
+                console.log(myUsername)
                 const { me } = cache.readQuery({
                     query: QUERY_ME,
                     variables: { myUsername }
@@ -34,7 +35,8 @@ const AddWorkout = () => {
                     variables: { myUsername },
                     data: { me: { ...me, exercises: [...me.exercises, addExercise] } },
                 });
-            } catch (e) {
+
+            } catch (error) {
                 console.warn('Users first Exercise inserted!')
             }
 
