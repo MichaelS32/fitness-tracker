@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client"
 import Feed from "../components/home-containers/Feed";
 import WorkoutList from "../components/home-containers/Workout-list";
 import Hero from "../components/home-containers/hero";
+import AddWorkout from "../components/AddWorkout";
 
 function Profile() {
     return (
@@ -12,8 +13,7 @@ function Profile() {
                 <Hero />
             </div>
             <div className="homeContainer">
-                <Feed />
-                <WorkoutList />
+                <AddWorkout></AddWorkout>
             </div>
         </>
     )
