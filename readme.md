@@ -49,5 +49,5 @@ npm run develop
 
 ## Links
 
-- [Heroku] 
+- [Heroku] https://so-fit.herokuapp.com/
 - [Github] https://github.com/MichaelS32/fitness-tracker
