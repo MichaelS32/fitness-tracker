@@ -44,7 +44,7 @@ const resolvers = {
         },
         // Go over this section with the group
         addExercise: async (parent, { exerciseType, title, weight, sets, reps, distance, time, username }) => {
-            const exercise = await Exercise.create({ exerciseType, title, weight, sets, reps, distance, time, username });
+            const exercise = await Exercise.create({ exerciseType: exerciseType, title: title, weight: weight, sets: sets, reps: reps, distance: distance, time: time, username: username });
 
             await User.findOneAndUpdate(
                 { username: username },
