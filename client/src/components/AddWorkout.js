@@ -74,11 +74,20 @@ const AddWorkout = () => {
         const myUsername = Auth.getProfile().data.username;
         try {
             await addExercise({
-                variables: { ...exerciseText, username: myUsername }
+                variables: { ...exerciseText }
             });
             console.log(exerciseText)
 
-            setText('');
+            setText({
+                exerciseType: "",
+                title: "",
+                weight: "",
+                sets: "",
+                reps: "",
+                distance: "",
+                time: "",
+                username: "",
+            });
         } catch (e) {
             console.error(e);
         }
