@@ -24,28 +24,29 @@ const AddWorkout = () => {
     const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
         update(cache, { data: { addExercise } }) {
             try {
-                const myUsername = Auth.getProfile().data.username;
+                const myUsername = Auth.getProfile().data.username
                 console.log(myUsername)
-                // const { me } = cache.readQuery({
-                //     query: QUERY_ME,
-                //     variables: { username: myUsername }
-                // });
+                const { me } = cache.readQuery({
+                    query: QUERY_ME,
+                    variables: { username: myUsername }
+                });
                 cache.writeQuery({
                     query: QUERY_ME,
                     variables: { username: myUsername },
-                    data: { exercises: [addExercise] }
+                    data: { me: { ...me, exercises: [...me.exercises, addExercise] } },
+                });
+                // update exercise array cache
+                const { exercises } = cache.readyQuery({ query: QUERY_EXERCISES });
+                cache.writeQuery({
+                    query: QUERY_EXERCISES,
+                    data: { exercises: [addExercise, ...exercises] }
                 });
 
             } catch (error) {
                 console.warn('Users first Exercise inserted!')
             }
 
-            // update exercise array cache
-            const { exercises } = cache.readyQuery({ query: QUERY_EXERCISES });
-            cache.writeQuery({
-                query: QUERY_EXERCISES,
-                data: { exercises: [addExercise, ...exercises] }
-            })
+
         }
     });
     const ref = useRef(null);
