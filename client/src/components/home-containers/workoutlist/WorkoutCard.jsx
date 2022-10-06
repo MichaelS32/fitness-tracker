@@ -9,7 +9,7 @@ import { fontSize } from '@mui/system';
 
 export default function WorkoutCard() {
   return (
-    <ImageList sx={{ width: 760, height: 450, padding: 1 }}>
+    <ImageList sx={{ width: 820, height: 450, padding: 1 }}>
       <ImageListItem key="Subheader" cols={2}>
         <ListSubheader sx={{ textAlign: 'center', fontSize: 30, fontStyle: "san-serif", fontStyle: "italic", color: "black", fontWeight: "bold", textDecoration: "underline" }} component="div">Workouts</ListSubheader>
       </ImageListItem>
@@ -49,6 +49,7 @@ const itemData = [
   {
     img: 'https://cdn.mos.cms.futurecdn.net/zkrwxQVtsn3Yi2Pgmh89eN-1200-80.jpg',
     title: 'Bicep',
+    url: "https://www.livritefitness.com/workouts/bicep-workouts#barbell_curls"
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBSd3WTIhSGkXpI1xupkGdnLBIQjPCrLcNw&usqp=CAU',
