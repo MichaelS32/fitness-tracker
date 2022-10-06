@@ -20,7 +20,16 @@ import Auth from "../utils/auth";
 const theme = createTheme();
 
 const AddWorkout = () => {
-    const [exerciseText, setText] = useState('');
+    const [exerciseText, setText] = useState({
+        exerciseType: "",
+        title: "",
+        weight: "",
+        sets: "",
+        reps: "",
+        distance: "",
+        time: "",
+        username: "",
+    });
     const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
         update(cache, { data: { addExercise } }) {
             try {
@@ -67,7 +76,7 @@ const AddWorkout = () => {
             await addExercise({
                 variables: { ...exerciseText, username: myUsername }
             });
-
+            console.log(exerciseText)
 
             setText('');
         } catch (e) {
@@ -102,7 +111,7 @@ const AddWorkout = () => {
                             required
                             fullWidth
                             name="title"
-                            label="title"
+                            label="What did your workout consist of and how did you feel after?"
                             type="title"
                             onChange={handleChange}
                             value={exerciseText.title}
@@ -115,7 +124,7 @@ const AddWorkout = () => {
                             required
                             fullWidth
                             name="exerciseType"
-                            label="exerciseType"
+                            label="What kind of exercise? (ex: fitness and cardio"
                             type="exerciseType"
                             onChange={handleChange}
                             value={exerciseText.exerciseType}
