@@ -19,10 +19,14 @@ async function startServer() {
     const apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
+        cache: bounded,
         context: authMiddleware
     });
 
     await apolloServer.start();
+
+    app.use(express.urlencoded({ extended: false }));
+    app.use(express.json());
 
     apolloServer.applyMiddleware(app)
 
