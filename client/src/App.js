@@ -1,32 +1,33 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-import Header from './components/Header';
+import Header from "./components/Header";
 // import Footer from './components/Footer';
 
-import Home from './pages/Home';
-import Login from './pages/LoginForm';
-import Profile from './pages/Profile';
-import SignUpForm from './pages/SignUpForm';
-const url = 'http://localhost:5000/graphql';
+import Home from "./pages/Home";
+import Login from "./pages/LoginForm";
+import Profile from "./pages/Profile";
+import SignUpForm from "./pages/SignUpForm";
+import MyExercises from "./pages/MyExercises";
+const url = "http://localhost:5000/graphql";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -45,18 +46,9 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              <Route
-                path="/login"
-                element={<Login />}
-              />
-              <Route
-                path="/signup"
-                element={<SignUpForm />}
-              />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUpForm />} />
               <Route path="/profile">
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
