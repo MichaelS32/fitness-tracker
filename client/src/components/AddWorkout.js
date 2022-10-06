@@ -68,7 +68,7 @@ const AddWorkout = () => {
             });
             console.log(...exerciseText);
 
-            setText('');
+            // setText('');
         } catch (e) {
             console.error(e);
         }
